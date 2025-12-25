@@ -1,0 +1,9 @@
+{
+  "name": "Copy of AcademiaAI - Smart Student Assistant",
+  "description": "A comprehensive academic productivity suite featuring AI-powered flashcards, study planners, note summarizers, and a research assistant grounded in Google Search.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera",
+    "geolocation"
+  ]
+}
