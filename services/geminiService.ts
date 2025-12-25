@@ -2,10 +2,10 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Flashcard, NoteSummary, StudyPlan } from "../types";
 
-const API_KEY = process.env.API_KEY || "";
-
 export const getGeminiClient = () => {
-  return new GoogleGenAI({ apiKey: API_KEY });
+  // Ensure process.env is accessible to prevent ReferenceErrors in some browser environments
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : '';
+  return new GoogleGenAI({ apiKey: apiKey as string });
 };
 
 export const generateFlashcards = async (topic: string, count: number = 5): Promise<Flashcard[]> => {
